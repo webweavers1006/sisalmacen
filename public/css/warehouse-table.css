@@ -1,0 +1,131 @@
+/* Warehouse Table Styles - Exact Spec Implementation */
+.warehouse-table-wrapper {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.warehouse-header {
+  background-color: #34495e;
+  color: white;
+  font-weight: 700;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.warehouse-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.warehouse-table thead th {
+  background-color: #5d7384;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border: none;
+}
+
+.warehouse-table tbody tr {
+  border-bottom: 1px solid #f3f4f6; /* border-gray-100 */
+}
+
+.warehouse-table tbody tr:nth-child(even) {
+  background-color: #ebf5ff;
+}
+
+.warehouse-table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+.warehouse-table tbody tr:hover {
+  background-color: #f0f9ff; /* subtle hover */
+  transition: background-color 0.2s ease;
+}
+
+.warehouse-table td {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.warehouse-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem; /* 36px */
+  height: 2.25rem;
+  background-color: #3b82f6; /* bright blue */
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.875rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  border: none;
+  line-height: 1;
+}
+
+.warehouse-action-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  color: white;
+}
+
+.warehouse-action-btn i {
+  font-size: 0.875rem;
+}
+
+.warehouse-input,
+.warehouse-select {
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  background-color: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.warehouse-input:focus,
+.warehouse-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .warehouse-table-wrapper {
+    margin: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .warehouse-table {
+    font-size: 0.8rem;
+  }
+  
+  .warehouse-action-btn {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Override DataTables if present */
+.warehouse-table.dataTable thead th {
+  background-color: #5d7384 !important;
+}
+
+.warehouse-table.dataTable tbody tr:nth-child(even) {
+  background-color: #ebf5ff !important;
+}
+
+.warehouse-table.dataTable tbody tr:hover {
+  background-color: #f0f9ff !important;
+}

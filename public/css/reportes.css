@@ -1,0 +1,209 @@
+th,
+td {
+    padding: 8px 12px;
+    font-size: 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+}
+
+thead th {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+thead {
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.02);
+}
+
+tr:hover {
+    background-color: rgba(0, 123, 255, 0.08) !important;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+.btn-xs {
+    padding: 0.10rem;
+}
+
+.btn-xs-xs {
+    position: relative;
+    top: 30px;
+    left: 240px;
+    padding: 0.25rem;
+    background-color: rgb(105, 107, 107);
+    border-radius: 5px;
+}
+
+.custom-select {
+    height: 32px;
+}
+
+.small-button {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: rgb(105, 107, 107);
+    border-radius: 5px;
+}
+ .btnalerta{
+  border: none;
+  text-align: center;
+  color: black;
+  border-radius: 5px;
+      background-color: rgb(243, 227, 7);
+ }
+ .btnsolvente{
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  color: black;
+ }
+
+ .btn-edit-circle {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 34px;
+   height: 34px;
+   background: linear-gradient(135deg, #007bff, #0056b3);
+   color: white !important;
+   border-radius: 50%;
+   text-decoration: none;
+   font-size: 13px;
+   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+   transition: all 0.3s ease;
+   border: none;
+   line-height: 1;
+ }
+/* reportes.css */
+
+/* Quitamos el borde doble del contenedor wrapper */
+.container-wraper {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 10px !important;
+}
+
+/* Filas intercaladas */
+#listadoprod tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+#listadoprod tbody tr:hover {
+    background-color: #eceff1 !important;
+    transition: 0.2s;
+}
+
+/* Estilo para los textos de Estatus */
+.text-activo { color: #28a745; font-weight: bold; }
+.text-inactivo { color: #dc3545; font-weight: bold; }
+
+/* Forzar que la tabla use todo el ancho */
+#listadoprod {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+#listadoprod td {
+    padding: 12px 15px !important;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Asegura que la tabla no se rompa */
+.table-responsive {
+    width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#listadoprod {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Para que los textos largos no rompan el ancho en pantallas pequeñas */
+#listadoprod td {
+    white-space: normal; /* Cambia nowrap por normal si hay descripciones largas */
+    vertical-align: middle;
+}
+ .btn-edit-circle:hover {
+   background: linear-gradient(135deg, #0056b3, #004085);
+   transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+   color: white !important;
+ }
+
+
+
+ .btn-edit-circle i {
+   font-size: 16px;
+ }
+
+ /* Card enhancements */
+ .card.rounded-3 {
+   border: none;
+   box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+   border-radius: 20px !important;
+   overflow: hidden;
+   backdrop-filter: blur(10px);
+ }
+
+ .card.rounded-3 .card-header {
+   background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+   color: white;
+   border-bottom: none;
+   padding: 15px 20px;
+ }
+
+ .card.rounded-3 .card-header h3 {
+   margin: 0;
+   font-size: 1.4rem;
+   font-weight: 600;
+ }
+
+ .card.rounded-3 .card-body {
+   padding: 20px;
+ }
+
+ /* Table container */
+.table-container {
+   overflow-x: auto;
+   border-radius: 12px;
+   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+ }
+
+#listadoprod,
+#listadoprod.table {
+  width: 100% !important;
+  table-layout: fixed;
+}
+
+#listadoprod th,
+#listadoprod td {
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#listadoprod.dataTable {
+  width: 100% !important;
+}
+
+ /* Responsive improvements */
+ @media (max-width: 768px) {
+   .btn-edit-circle {
+     width: 32px;
+     height: 32px;
+     font-size: 12px;
+   }
+ }

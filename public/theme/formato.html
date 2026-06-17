@@ -1,0 +1,36 @@
+<head>
+  <link rel="stylesheet" href="<?php echo base_url();?>/theme/dist/css/adminlte.min.css">
+  <style type="text/css">
+    #detalles-orden{
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;    
+    }
+  </style>
+</head>
+<body>
+  <table class="table">
+    <tr>
+      <td>Solicitud por: <?php echo $usupnom.' '.$usupape;?></td>
+      <td><?php echo $dirnom;?></td>
+      <td><?php echo $depnom;?></td>
+    </tr>
+    <tr>
+      
+    </tr>
+  </table>
+  <table style="border-style:solid; border-width: 2px; border-color: black">
+    <thead>
+      <tr>
+        <th>Codigo de barras</th>
+        <th>Marca</th>
+        <th>Descripcion</th>
+        <th>Cantidad Solicitada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php echo $tbody;?>
+    </tbody>
+  </table>
+  <div class="w-100" style="break-after: always;"></div>
+</body>

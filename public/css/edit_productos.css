@@ -1,0 +1,156 @@
+/* productos.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* El color que definimos como base para todo el sistema SIAC */
+  --color-siac-dark: #384c60; 
+  --color-border: #e2e8f0;
+  --color-bg-light: #f8fafc;
+}
+
+body {
+  background-color: #f1f5f9 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* --- TARJETA PRINCIPAL --- */
+.card {
+  max-width: 950px; 
+  margin: 1.5rem auto !important;
+  border: none !important;
+  border-radius: 20px !important; 
+  overflow: hidden; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+}
+
+/* ENCABEZADO (Donde está el COD y el Estado Activo) */
+.card-header {
+  /* Eliminado el gradient anterior para usar el color de Gestión de Imagen */
+  background: var(--color-siac-dark) !important; 
+  padding: 0.8rem 2.5rem !important; 
+  border: none !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important; 
+  margin: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- CUERPO DEL FORMULARIO --- */
+.card-body {
+  padding: 1.2rem 1.8rem !important;
+  background: #ffffff;
+}
+
+.form-group label {
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  color: #475569 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.form-control {
+  height: 38px !important;
+  font-size: 0.9rem !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--color-border) !important;
+  background-color: var(--color-bg-light) !important;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  background-color: #ffffff !important;
+  border-color: var(--color-siac-dark) !important;
+  box-shadow: 0 0 0 3px rgba(56, 76, 96, 0.1) !important;
+  outline: none;
+}
+
+/* --- SECCIÓN GESTIÓN DE IMAGEN (SUB-CARD) --- */
+.siac-docs-card {
+  margin-top: 1.5rem;
+  border-radius: 15px !important;
+  border: 1px solid var(--color-border) !important;
+  overflow: hidden;
+}
+
+.siac-docs-header {
+  /* Sincronizado con el color del header principal */
+  background: var(--color-siac-dark) !important;
+  padding: 0.6rem 1rem !important;
+}
+
+.siac-docs-header h6 {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  margin: 0 !important;
+  font-weight: 600;
+}
+
+.preview-container {
+  background: #ffffff !important;
+  border: 2px dashed #cbd5e0 !important;
+  border-radius: 12px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+/* --- BOTONES Y FOOTER --- */
+.card-footer {
+  background-color: var(--color-bg-light) !important;
+  padding: 1.2rem 2rem !important;
+  border-top: 1px solid #f1f5f9 !important;
+  display: flex;
+  justify-content: center; /* Centrado para que se vea balanceado */
+  gap: 15px;
+}
+
+.btn {
+  border-radius: 10px !important;
+  padding: 0.6rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  transition: all 0.2s !important;
+}
+
+/* Botón Actualizar con el color del sistema */
+.siac-btn-primary {
+  background: var(--color-siac-dark) !important;
+  color: #ffffff !important;
+  border: none !important;
+  min-width: 160px;
+}
+
+.siac-btn-primary:hover {
+  background: #2c3e50 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+  background: #64748b !important;
+  border: none !important;
+  min-width: 140px;
+}
+
+.siac-btn-danger {
+  background: #ef4444 !important;
+  border: none !important;
+}
+
+/* Ajuste para inputs deshabilitados */
+.form-control:disabled {
+  background-color: #e9ecef !important;
+  color: #6c757d !important;
+  cursor: not-allowed;
+  border-style: dashed !important;
+}

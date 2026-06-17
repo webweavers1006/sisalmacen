@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  background-color: #f1f5f9 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* --- TARJETA REDONDEADA Y COMPACTA --- */
+.card {
+  max-width: 950px; /* Aumentado para hacer el contenedor COD/Estado más ancho */
+  margin: 1.5rem auto !important;
+  border: none !important;
+  border-radius: 20px !important; /* Bordes bien redondeados */
+  overflow: hidden; /* Para que el header no tape el redondeo */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+}
+
+/* ENCABEZADO CON COLOR Y DEGRADADO */
+.card-header {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+  padding: 0.8rem 2.5rem !important; /* Compact vertical, ancho horizontal mantenido */
+  border: none !important;
+}
+
+.card-title {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important; /* Texto blanco para resaltar */
+  margin: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- CUERPO DEL FORMULARIO --- */
+.card-body {
+  padding: 1.2rem 1.8rem !important; /* Más compacto */
+  background: #ffffff;
+}
+
+.form-group label {
+  font-weight: 600 !important;
+  font-size: 0.8rem !important; /* Labels más compactos */
+  color: #475569 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.form-control {
+  height: 36px !important; /* Altura más compacta */
+  font-size: 0.9rem !important;
+  border-radius: 10px !important;
+  border: 1px solid #e2e8f0 !important;
+  background-color: #f8fafc !important;
+}
+
+.form-control:focus {
+  background-color: #ffffff !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* --- SECCIÓN IMAGEN (SUB-CARD) --- */
+.siac-docs-card {
+  margin-top: 1.5rem;
+  border-radius: 15px !important;
+  border: 1px solid #e2e8f0 !important;
+  overflow: hidden;
+}
+
+.siac-docs-header {
+  background: #334155 !important;
+  padding: 0.6rem 1rem !important;
+}
+
+.siac-docs-header h6 {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  margin: 0;
+}
+
+.preview-container {
+  background: #ffffff !important;
+  border: 2px dashed #cbd5e0 !important;
+  border-radius: 12px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#img_nueva {
+  max-height: 95px;
+  border-radius: 8px;
+}
+
+/* --- BOTONES --- */
+.card-footer {
+  background-color: #f8fafc !important;
+  padding: 1rem 2rem !important;
+  border-top: 1px solid #f1f5f9 !important;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn {
+  border-radius: 10px !important;
+  padding: 0.5rem 1.2rem !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  transition: all 0.2s !important;
+}
+
+.siac-btn-primary {
+  background: #2563eb !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.siac-btn-primary:hover {
+  background: #1d4ed8 !important;
+  transform: translateY(-1px);
+}
+
