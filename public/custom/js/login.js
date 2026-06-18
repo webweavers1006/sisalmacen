@@ -71,29 +71,16 @@ $(document).on('submit', '#login', function(e) {
 });
 
 /*Verficacion de datos en el form*/
-$(document).on('change', '#usuemail', function(e) {
+$(document).on('change input', '#usuemail', function(e) {
     let texto = $("#usuemail").val();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(texto)) {
         $("button[type=submit]").removeClass('is-valid');
         $("#usuemail").addClass('is-invalid');
-        $("button[type=submit]").attr('disabled', 'true');
-    } else if (texto.lenght < 5) {
+        $("button[type=submit]").attr('disabled', true);
+    } else if (texto.length < 5) {
         $("#usuemail").removeClass('is-invalid');
         $("#usuemail").removeClass('is-valid');
         $("button[type=submit]").removeAttr('disabled');
-    } else if (datos.usuemail.lenght < 1 || datos.usupass.lenght < 1) {
-        Swal.fire({
-            toast: true,
-            position: 'center',
-            showConfirmButton: false,
-            timer: 3000,
-            type: 'error',
-            title: 'Debe rellenar los campos solicitados'
-        });
-    } else if (datos.usuemail.lenght < 1 && datos.usupass.lenght > 1) {
-        $("#usuemail").addClass('is-invalid');
-    } else if (datos.usupass.lenght < 1 && datos.usuemail.lenght > 1) {
-        $("#usupass").addClass('is-invalid');
     } else {
         $("#usuemail").removeClass('is-invalid');
         $("#usuemail").addClass('is-valid');
