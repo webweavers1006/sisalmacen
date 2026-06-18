@@ -1,6 +1,6 @@
 $(document).on('change', '#email',function(e){
 	let texto = $("#email").val();
-	if(texto.match(/\w*.\w*\@sapi.gob.ve/) == null){
+	if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(texto)){
 		$("button[type=submit]").removeClass('is-valid');
 		$("#email").addClass('is-invalid');
 		$("button[type=submit]").attr('disabled', 'true');

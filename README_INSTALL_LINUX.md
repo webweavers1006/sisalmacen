@@ -153,7 +153,7 @@ sudo mysql -u root -p -e "CREATE USER 'sisalmacen'@'localhost' IDENTIFIED BY 'TU
 sudo mysql -u root -p -e "GRANT ALL PRIVILEGES ON sisalmacen.* TO 'sisalmacen'@'localhost';"
 sudo mysql -u root -p -e "FLUSH PRIVILEGES;"
 
-# Importar el dump (780 líneas, 22 tablas)
+# Importar el dump (estructura + datos mínimos iniciales)
 sudo mysql -u root -p sisalmacen < sisalmacen.sql
 
 # Verificar tablas
@@ -172,6 +172,24 @@ Tablas que se crean (22 en total):
 | sta_usuarios | | |
 
 > El proyecto **no tiene migraciones** — la carpeta `app/Database/Migrations/` solo contiene `.gitkeep`. Todo el esquema viene del dump `sisalmacen.sql`.
+
+### 🔑 Credenciales por defecto
+
+| Campo | Valor |
+|-------|-------|
+| Email | `admin@sisalmacen.saime.gob.ve` |
+| Password | `s4im3Deploy` |
+| Rol | Soporte (acceso total) |
+
+### 🧹 Limpiar la base de datos
+
+Si necesitas reiniciar la BD a su estado original (sin transacciones, solo datos mínimos):
+
+```bash
+sudo mysql -u root -p sisalmacen < limpiar_bd.sql
+```
+
+Esto borra todas las entradas, salidas, productos, existencias, usuarios (excepto el admin) y deja solo los catálogos base.
 
 ---
 
@@ -385,7 +403,8 @@ Si aparecen nuevos errores similares en otros módulos, aplica el mismo patrón 
 │   ├── debugbar/       # Barra de depuración
 │   └── uploads/        # Archivos subidos
 ├── .env                # Configuración de entorno (creado desde env)
-├── sisalmacen.sql      # Dump de la base de datos (780 líneas, 22 tablas)
+├── sisalmacen.sql      # Dump de la base de datos (estructura + datos mínimos)
+├── limpiar_bd.sql      # Script para reiniciar la BD a estado original
 └── spark               # CLI de CodeIgniter
 ```
 

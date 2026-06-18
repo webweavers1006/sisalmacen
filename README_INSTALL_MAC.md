@@ -148,7 +148,7 @@ database.default.port     = 3306
 # Crear la base de datos
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS sisalmacen CHARACTER SET utf8 COLLATE utf8_general_ci;"
 
-# Importar el dump (780 líneas, 22 tablas)
+# Importar el dump (estructura + datos mínimos iniciales)
 mysql -u root sisalmacen < sisalmacen.sql
 
 # Verificar tablas
@@ -167,6 +167,24 @@ Tablas que se crean (22 en total):
 | sta_usuarios | | |
 
 > El proyecto **no tiene migraciones** — la carpeta `app/Database/Migrations/` solo contiene `.gitkeep`. Todo el esquema viene del dump `sisalmacen.sql`.
+
+### 🔑 Credenciales por defecto
+
+| Campo | Valor |
+|-------|-------|
+| Email | `admin@sisalmacen.saime.gob.ve` |
+| Password | `s4im3Deploy` |
+| Rol | Soporte (acceso total) |
+
+### 🧹 Limpiar la base de datos
+
+Si necesitas reiniciar la BD a su estado original (sin transacciones, solo datos mínimos):
+
+```bash
+mysql -u root sisalmacen < limpiar_bd.sql
+```
+
+Esto borra todas las entradas, salidas, productos, existencias, usuarios (excepto el admin) y deja solo los catálogos base.
 
 ---
 
@@ -347,7 +365,8 @@ sisalmacen-master/
 │   ├── debugbar/       # Barra de depuración
 │   └── uploads/        # Archivos subidos
 ├── .env                # Configuración de entorno (creado desde env)
-├── sisalmacen.sql      # Dump de la base de datos (780 líneas, 22 tablas)
+├── sisalmacen.sql      # Dump de la base de datos (estructura + datos mínimos)
+├── limpiar_bd.sql      # Script para reiniciar la BD a estado original
 └── spark               # CLI de CodeIgniter
 ```
 

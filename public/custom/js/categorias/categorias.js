@@ -209,7 +209,7 @@ $(document).on('submit', "#edit-categoria", function(e) {
 
 $(document).on('change', '#name-correo', function(e) {
     let texto = $("#name-correo").val();
-    if (texto.match(/\w*.\w*\@sapi.gob.ve/) == null) {
+    if (texto.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) == null) {
         $("#name-correo").addClass('is-invalid');
         $("button[type=submit]").attr('disabled', 'true');
     } else if (texto.lenght < 5) {
@@ -224,7 +224,7 @@ $(document).on('change', '#name-correo', function(e) {
 
 $(document).on('change', '#editar-correo', function(e) {
     let texto = $("#editar-correo").val();
-    if (texto.match(/\w*.\w*\@sapi.gob.ve/) == null) {
+    if (texto.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) == null) {
         $("#editar-correo").addClass('is-invalid');
         $("button[type=submit]").attr('disabled', 'true');
     } else if (texto.lenght < 5) {

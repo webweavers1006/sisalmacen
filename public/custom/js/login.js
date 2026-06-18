@@ -73,7 +73,7 @@ $(document).on('submit', '#login', function(e) {
 /*Verficacion de datos en el form*/
 $(document).on('change', '#usuemail', function(e) {
     let texto = $("#usuemail").val();
-    if (texto.match(/\w*.\w*\@sapi.gob.ve/) == null) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(texto)) {
         $("button[type=submit]").removeClass('is-valid');
         $("#usuemail").addClass('is-invalid');
         $("button[type=submit]").attr('disabled', 'true');
