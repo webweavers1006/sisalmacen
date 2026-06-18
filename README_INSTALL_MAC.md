@@ -10,9 +10,25 @@
 |------------|----------------|
 | PHP | **7.4** (CI 4.0.3 no compatible con PHP 8.x) |
 | MySQL | 5.7+ (probado con MySQL 9.6, funciona) |
-| Nginx | Ya instalado |
+| Nginx | Se instala en el paso 4 (`brew install nginx`) |
 | Composer | 2.x (**manual**, no por brew) |
 | Homebrew | Ya instalado |
+| Git | Ya instalado (viene con macOS) |
+
+---
+
+## 0. Clonar el proyecto
+
+```bash
+cd ~/Documents/GitHub
+git clone <repo-url> sisalmacen
+cd sisalmacen
+```
+
+> Si ya tienes el proyecto, ubícate en la carpeta raíz y asegúrate de estar en la rama correcta:
+> ```bash
+> git pull origin main
+> ```
 
 ---
 
@@ -72,7 +88,24 @@ composer --version
 
 ---
 
-## 4. Dependencias del proyecto (vendor)
+## 4. Instalar Nginx
+
+```bash
+brew install nginx
+brew services start nginx
+```
+
+Verificar:
+```bash
+nginx -v
+# Debe mostrar: nginx version: x.x.x
+```
+
+> Si ya lo tienes instalado, solo asegúrate de que esté corriendo: `brew services list | grep nginx`
+
+---
+
+## 5. Dependencias del proyecto (vendor)
 
 El proyecto **ya incluye la carpeta `vendor/`** con todas las dependencias instaladas. No es necesario ejecutar `composer install`.
 
@@ -83,7 +116,7 @@ Si por alguna razón necesitas reinstalar, ten en cuenta:
 
 ---
 
-## 5. Configurar `.env`
+## 6. Configurar `.env`
 
 ```bash
 cp env .env
@@ -109,7 +142,7 @@ database.default.port     = 3306
 
 ---
 
-## 6. Crear base de datos e importar el dump
+## 7. Crear base de datos e importar el dump
 
 ```bash
 # Crear la base de datos
@@ -137,7 +170,7 @@ Tablas que se crean (22 en total):
 
 ---
 
-## 7. Crear carpetas writable y permisos
+## 8. Crear carpetas writable y permisos
 
 CodeIgniter 4 necesita estas carpetas con permisos de escritura:
 
@@ -162,7 +195,7 @@ ls -la writable/
 
 ---
 
-## 8. Configurar Nginx
+## 9. Configurar Nginx
 
 Crear archivo de sitio virtual:
 
@@ -204,7 +237,7 @@ server {
 
 ---
 
-## 9. Iniciar servicios
+## 10. Iniciar servicios
 
 ```bash
 # Iniciar PHP-FPM 7.4
@@ -220,7 +253,7 @@ nginx -t
 
 ---
 
-## 10. Agregar dominio local
+## 11. Agregar dominio local
 
 ```bash
 sudo nano /etc/hosts
@@ -233,7 +266,7 @@ Agregar:
 
 ---
 
-## 11. Probar
+## 12. Probar
 
 Abrir en el navegador: **http://sisalmacen.local**
 
@@ -316,4 +349,28 @@ sisalmacen-master/
 ├── .env                # Configuración de entorno (creado desde env)
 ├── sisalmacen.sql      # Dump de la base de datos (780 líneas, 22 tablas)
 └── spark               # CLI de CodeIgniter
+```
+
+---
+
+## 🔄 Comandos Git útiles
+
+```bash
+# Ver estado del proyecto
+git status
+
+# Ver historial de cambios
+git log --oneline -10
+
+# Deshacer el último commit (manteniendo los cambios)
+git reset --soft HEAD~1
+
+# Deshacer cambios locales en un archivo
+git checkout -- nombre-archivo
+
+# Actualizar desde el repositorio remoto
+git pull origin main
+
+# Crear una rama para pruebas
+git checkout -b prueba
 ```

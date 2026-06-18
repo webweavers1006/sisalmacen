@@ -13,6 +13,23 @@
 | Nginx | ≥ 1.18 |
 | Composer | 2.x |
 | Sistema | Ubuntu 20.04/22.04, Debian 11/12 |
+| Git | Requerido para clonar el proyecto |
+
+---
+
+## 0. Clonar el proyecto
+
+```bash
+cd /var/www
+sudo git clone <repo-url> sisalmacen
+cd sisalmacen
+```
+
+> Si ya tienes el proyecto, ubícate en la carpeta raíz y actualiza:
+> ```bash
+> cd /var/www/sisalmacen
+> sudo git pull origin main
+> ```
 
 ---
 
@@ -370,6 +387,30 @@ Si aparecen nuevos errores similares en otros módulos, aplica el mismo patrón 
 ├── .env                # Configuración de entorno (creado desde env)
 ├── sisalmacen.sql      # Dump de la base de datos (780 líneas, 22 tablas)
 └── spark               # CLI de CodeIgniter
+```
+
+---
+
+## 🔄 Comandos Git útiles
+
+```bash
+# Ver estado del proyecto
+git status
+
+# Ver historial de cambios
+git log --oneline -10
+
+# Deshacer el último commit (manteniendo los cambios)
+git reset --soft HEAD~1
+
+# Deshacer cambios locales en un archivo
+git checkout -- nombre-archivo
+
+# Actualizar desde el repositorio remoto
+git pull origin main
+
+# Crear una rama para pruebas
+git checkout -b prueba
 ```
 
 ---
